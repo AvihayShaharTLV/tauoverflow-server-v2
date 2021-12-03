@@ -9,8 +9,9 @@ app.options('*', cors())
 app.use(cors())
 
 app.get('/s3Url', async (req, res) => {
-  console.log("trying to upload an image and generate URL")
-  const url = await generateUploadURL()
+  const {folderName} = req.query;
+  console.log(folderName)
+  const url = await generateUploadURL(folderName)
   res.send({url})
 })
 
