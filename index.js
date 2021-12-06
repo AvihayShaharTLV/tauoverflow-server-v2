@@ -15,16 +15,16 @@ app.get('/s3Url', async (req, res) => {
   res.send({url})
 })
 
-// app.use(
-//     postgraphile(
-//       process.env.DATABASE_URL || "postgres://postgres:password@localhost:5432/postgres",
-//       "public",
-//       {
-//         watchPg: true,
-//         graphiql: true,
-//         enhanceGraphiql: true,
-//       }
-//     )
-//   );
+app.use(
+    postgraphile(
+      process.env.DATABASE_URL || "postgres://postgres:password@localhost:5432/postgres",
+      "public",
+      {
+        watchPg: true,
+        graphiql: true,
+        enhanceGraphiql: true,
+      }
+    )
+  );
 
 app.listen(port, () => console.log("listening on port " + port))
