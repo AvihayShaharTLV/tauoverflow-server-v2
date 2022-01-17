@@ -5,7 +5,7 @@ import { generateUploadURL } from "./s3.js";
 const app = express();
 const port = 5000;
 
-// add cors
+// add cor
 app.options("*", cors());
 app.use(cors());
 
