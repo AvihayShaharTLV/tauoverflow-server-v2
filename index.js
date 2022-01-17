@@ -18,7 +18,7 @@ app.get("/s3Url", async (req, res) => {
 app.use(
   postgraphile(
     process.env.DATABASE_URL ||
-      "postgres://postgres:password@localhost:5432/postgres",
+      "postgres://postgres:6cqMqw9G1D6wc99b@35.205.136.135:5432/postgres",
     "public",
     {
       watchPg: true,
