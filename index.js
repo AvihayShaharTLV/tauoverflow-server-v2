@@ -12,8 +12,16 @@ app.use(cors());
 app.get("/s3Url", async (req, res) => {
   const { folderName } = req.query;
   console.log("uploading to s3 into folder:", folderName);
-  const url = await generateUploadURL(folderName);
-  res.send({ url });
+
+  try {
+    const url = await generateUploadURL(folderName);
+    res.send({ url });
+    
+  }
+  catch(err) {
+    console.log(err)
+    res.send({});
+  }
 });
 
 app.get("/envCheck", async (req, res) => {
