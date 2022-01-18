@@ -16,6 +16,10 @@ app.get("/s3Url", async (req, res) => {
   res.send({ url });
 });
 
+app.get("/envCheck", async (req, res) => {
+  res.send(process.env.AWS_ACCESS_KEY_ID || 'nothing')
+});
+
 app.use(
   postgraphile(
     process.env.DATABASE_URL ||
